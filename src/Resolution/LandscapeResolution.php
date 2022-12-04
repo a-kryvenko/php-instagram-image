@@ -19,12 +19,4 @@ class LandscapeResolution implements ImageResolutionInterface
     {
         return 565;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 1.91;
-    }
 }

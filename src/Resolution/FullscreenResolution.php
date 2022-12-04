@@ -19,12 +19,4 @@ class FullscreenResolution implements ImageResolutionInterface
     {
         return 1920;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 0.5625;
-    }
 }

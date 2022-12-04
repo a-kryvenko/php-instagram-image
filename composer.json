@@ -1,7 +1,7 @@
 {
     "name": "antey/instagram-image",
-    "description": "Library for resize image on instagram specifications",
-    "keywords": ["php", "image", "instagram", "resize", "gallery", "stories", "reels"],
+    "description": "Library for resizing images on instagram specifications",
+    "keywords": ["php", "instagram", "image", "resize", "gallery", "stories", "reels", "autoscale"],
     "homepage": "https://github.com/a-kryvenko/php-instagram-image",
     "type": "library",
     "license": "MIT",

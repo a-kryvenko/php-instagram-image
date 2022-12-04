@@ -19,12 +19,4 @@ class IGTVCoverResolution implements ImageResolutionInterface
     {
         return 654;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 0.642;
-    }
 }

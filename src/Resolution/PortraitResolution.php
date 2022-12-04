@@ -19,12 +19,4 @@ class PortraitResolution implements ImageResolutionInterface
     {
         return 1350;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 0.8;
-    }
 }

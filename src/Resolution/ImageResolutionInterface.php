@@ -13,9 +13,4 @@ interface ImageResolutionInterface
      * @return int image height in pixels.
      */
     public function getHeight(): int;
-
-    /**
-     * @return float image aspect ratio (width / height).
-     */
-    public function getRatio(): float;
 }

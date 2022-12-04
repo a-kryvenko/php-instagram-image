@@ -19,12 +19,4 @@ class ProfileResolution implements ImageResolutionInterface
     {
         return 360;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 1.0;
-    }
 }

@@ -19,12 +19,4 @@ class SquareResolution implements ImageResolutionInterface
     {
         return 1080;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRatio(): float
-    {
-        return 1.0;
-    }
 }
