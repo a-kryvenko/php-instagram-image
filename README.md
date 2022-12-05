@@ -4,6 +4,8 @@ PHP library for resizing images according to instagram requirements.
 
 ![tests workflow](https://github.com/a-kryvenko/php-instagram-image/actions/workflows/tests.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/a-kryvenko/php-instagram-image/badge.svg?branch=master)](https://coveralls.io/github/a-kryvenko/php-instagram-image?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 ------
 
