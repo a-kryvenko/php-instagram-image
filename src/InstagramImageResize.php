@@ -26,12 +26,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename path to profile cover, 365x365 px
+     * Resize image into profile cover, <b>365</b>x<b>365</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string
+     * @return string path to resized file
      * @throws Exception
      */
     public function getProfile(string $filename, string $destination = ''): string
@@ -40,8 +42,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
-     * @return array paths to stories images, 1080x1920 px
+     * Resize image and slice into several stories, <b>1080</b>x<b>1920</b> px
+     *
+     * @param string $filename path to file you wish to resize
+     * @param string $destination <p>
+     * path to folder for stories slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
+     * </p>
+     * @return array array of paths to stories images
      * @throws Exception
      */
     public function getStories(string $filename, string $destination = ''): array
@@ -50,8 +59,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
-     * @return array paths to reels images, 1080x1920 px
+     * Resize image and slice into several reels, <b>1080</b>x<b>1920</b> px
+     *
+     * @param string $filename path to file you wish to resize
+     * @param string $destination <p>
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
+     * </p>
+     * @return array array of paths to reels images
      * @throws Exception
      */
     public function getReels(string $filename, string $destination = ''): array
@@ -60,12 +76,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image into IGTV cover, <b>420</b>x<b>654</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string path to IGTV cover, 420x654 px
+     * @return string path to resized file
      * @throws Exception
      */
     public function getIgtvCover(string $filename, string $destination = ''): string
@@ -74,12 +92,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image into Square Post, <b>1080</b>x<b>1080</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string path to post image, 1080x1080 px
+     * @return string path to resized file
      * @throws Exception
      */
     public function getSinglePostSquare(string $filename, string $destination = ''): string
@@ -88,12 +108,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image into Landscape Post, <b>1080</b>x<b>565</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string path to post image, 1080x565 px
+     * @return string path to resized file
      * @throws Exception
      */
     public function getSinglePostLandscape(string $filename, string $destination = ''): string
@@ -102,12 +124,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image into Portrait Post, <b>1080</b>x<b>1350</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string path to post image, 1080x1350 px
+     * @return string path to resized file
      * @throws Exception
      */
     public function getSinglePostPortrait(string $filename, string $destination = ''): string
@@ -116,12 +140,14 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image into optimal resolution (Square, Landscape, Portrait)
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result file.
-     * If empty, then will be replaced original file
+     * filename of result file.
+     * If empty, will be replaced original file
      * </p>
-     * @return string path to post image, detected optimal resolution (square/landscape/portrait)
+     * @return string path to resized file
      * @throws Exception
      */
     public function getSinglePostOptimal(string $filename, string $destination = ''): string
@@ -138,12 +164,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image and slice into several Square Posts, <b>1080</b>x<b>1080</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result files.
-     * If empty, then will be stored near to original file
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
      * </p>
-     * @return array paths to post images, 1080x1080 px
+     * @return array array of paths to gallery images
      * @throws Exception
      */
     public function getGallerySquare(string $filename, string $destination = ''): array
@@ -152,12 +181,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image and slice into several Landscape Posts, <b>1080</b>x<b>565</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result files.
-     * If empty, then will be stored near to original file
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
      * </p>
-     * @return array paths to post images, 1080x565 px
+     * @return array array of paths to gallery images
      * @throws Exception
      */
     public function getGalleryLandscape(string $filename, string $destination = ''): array
@@ -166,12 +198,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image and slice into several Portrait Posts, <b>1080</b>x<b>1350</b> px
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result files.
-     * If empty, then will be stored near to original file
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
      * </p>
-     * @return array paths to post images, 1080x1350 px
+     * @return array array of paths to gallery images
      * @throws Exception
      */
     public function getGalleryPortrait(string $filename, string $destination = ''): array
@@ -180,12 +215,15 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image and slice into several Posts in most reliable resolution
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result files.
-     * If empty, then will be stored near to original file
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
      * </p>
-     * @return array paths to post images, detected optimal resolution (square/landscape/portrait)
+     * @return array array of paths to gallery images
      * @throws Exception
      */
     public function getGalleryOptimal(string $filename, string $destination = ''): array
@@ -202,15 +240,16 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $filename of file wile you wish to resize
+     * Resize image and based on image resolution, resize into single post,
+     * or slice to gallery in most reliable resolution.
+     *
+     * @param string $filename path to file you wish to resize
      * @param string $destination <p>
-     * destination of result files.
-     * If empty, then will be stored near to original file
+     * path to folder for reels slices.
+     * If empty, will be stored near to original file, in directory
+     * named "filename.jpeg"
      * </p>
-     * @return array <p>
-     * paths to post images, detected optimal resolution (square/landscape/portrait).
-     * Can be a gallery, or single image.
-     * </p>
+     * @return array array of paths to resized images
      * @throws Exception
      */
     public function getOptimalPost(string $filename, string $destination = ''): array
