@@ -3,10 +3,16 @@
 namespace Antey\InstagramImage\Resize;
 
 use Gumlet\ImageResize;
+use Gumlet\ImageResizeException;
 
 class SolidImageResize extends AbstractResize
 {
-    public function resize(string $path): array
+    /**
+     * @param string $path
+     * @return string[]
+     * @throws ImageResizeException
+     */
+    protected function save(string $path): array
     {
         $imageResize = new ImageResize($this->image->getPath());
         $imageResize->crop(

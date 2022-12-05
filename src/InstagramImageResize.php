@@ -263,7 +263,7 @@ class InstagramImageResize
             ]
         );
 
-        return $resize->resize($destination ?: $filename);
+        return $resize->resize($destination);
     }
 
     /**
@@ -276,7 +276,7 @@ class InstagramImageResize
     private function getSingle(string $filename, array $imageResolutions, string $destination): string
     {
         $resize = $this->resizeFactory->getSingle($filename, $imageResolutions);
-        return $resize->resize($destination ?: $filename)[0];
+        return $resize->resize($destination)[0];
     }
 
     /**
@@ -289,6 +289,6 @@ class InstagramImageResize
     private function getSliced(string $filename, array $imageResolutions, string $destination): array
     {
         $resize = $this->resizeFactory->getSliced($filename, $imageResolutions);
-        return $resize->resize($destination ?: $filename);
+        return $resize->resize($destination);
     }
 }

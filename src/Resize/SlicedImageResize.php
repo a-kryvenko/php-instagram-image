@@ -12,7 +12,7 @@ class SlicedImageResize extends AbstractResize
      * @return array
      * @throws ImageSliceException
      */
-    public function resize(string $path): array
+    protected function save(string $path): array
     {
         $imageSlice = new HorizontalImageSlice(
             $this->imageResolution->getWidth(),

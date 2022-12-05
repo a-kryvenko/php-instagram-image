@@ -32,4 +32,39 @@ class AbstractResizeTest extends TestCase
             $resize->getResolution()
         );
     }
+
+    public function testImageConverting(): void
+    {
+        $sourcePath = __DIR__ . '/testfile.webp';
+        $destinationPath = __DIR__ . '/resultfile.jpeg';
+        $width = 20;
+        $height = 30;
+
+        $imageResource = imagecreate($width, $height);
+        imagejpeg($imageResource, $sourcePath, 100);
+
+        $resolution = new SquareResolution();
+        $image = new Image($sourcePath);
+
+        $resize = new SolidImageResize(
+            $image,
+            $resolution
+        );
+        $resize->resize($destinationPath);
+
+        $this->assertFileExists($destinationPath);
+        $sizes = getimagesize($destinationPath);
+
+        $this->assertEquals(
+            $resolution->getWidth(),
+            $sizes[0]
+        );
+        $this->assertEquals(
+            $resolution->getHeight(),
+            $sizes[1]
+        );
+
+        unlink($sourcePath);
+        unlink($destinationPath);
+    }
 }
