@@ -26,7 +26,7 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $path path to profile cover, 365x365 px
+     * @param string $filename path to profile cover, 365x365 px
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -34,33 +34,33 @@ class InstagramImageResize
      * @return string
      * @throws Exception
      */
-    public function getProfile(string $path, string $destination = ''): string
+    public function getProfile(string $filename, string $destination = ''): string
     {
-        return $this->getSingle($path, [new ProfileResolution()], $destination);
+        return $this->getSingle($filename, [new ProfileResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @return array paths to stories images, 1080x1920 px
      * @throws Exception
      */
-    public function getStories(string $path, string $destination = ''): array
+    public function getStories(string $filename, string $destination = ''): array
     {
-        return $this->getSliced($path, [new FullscreenResolution()], $destination);
+        return $this->getSliced($filename, [new FullscreenResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @return array paths to reels images, 1080x1920 px
      * @throws Exception
      */
-    public function getReels(string $path, string $destination = ''): array
+    public function getReels(string $filename, string $destination = ''): array
     {
-        return $this->getSliced($path, [new FullscreenResolution()], $destination);
+        return $this->getSliced($filename, [new FullscreenResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -68,13 +68,13 @@ class InstagramImageResize
      * @return string path to IGTV cover, 420x654 px
      * @throws Exception
      */
-    public function getIgtvCover(string $path, string $destination = ''): string
+    public function getIgtvCover(string $filename, string $destination = ''): string
     {
-        return $this->getSingle($path, [new IGTVCoverResolution()], $destination);
+        return $this->getSingle($filename, [new IGTVCoverResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -82,13 +82,13 @@ class InstagramImageResize
      * @return string path to post image, 1080x1080 px
      * @throws Exception
      */
-    public function getSinglePostSquare(string $path, string $destination = ''): string
+    public function getSinglePostSquare(string $filename, string $destination = ''): string
     {
-        return $this->getSingle($path, [new SquareResolution()], $destination);
+        return $this->getSingle($filename, [new SquareResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -96,13 +96,13 @@ class InstagramImageResize
      * @return string path to post image, 1080x565 px
      * @throws Exception
      */
-    public function getSinglePostLandscape(string $path, string $destination = ''): string
+    public function getSinglePostLandscape(string $filename, string $destination = ''): string
     {
-        return $this->getSingle($path, [new LandscapeResolution()], $destination);
+        return $this->getSingle($filename, [new LandscapeResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -110,13 +110,13 @@ class InstagramImageResize
      * @return string path to post image, 1080x1350 px
      * @throws Exception
      */
-    public function getSinglePostPortrait(string $path, string $destination = ''): string
+    public function getSinglePostPortrait(string $filename, string $destination = ''): string
     {
-        return $this->getSingle($path, [new PortraitResolution()], $destination);
+        return $this->getSingle($filename, [new PortraitResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result file.
      * If empty, then will be replaced original file
@@ -124,10 +124,10 @@ class InstagramImageResize
      * @return string path to post image, detected optimal resolution (square/landscape/portrait)
      * @throws Exception
      */
-    public function getSinglePostOptimal(string $path, string $destination = ''): string
+    public function getSinglePostOptimal(string $filename, string $destination = ''): string
     {
         return $this->getSingle(
-            $path,
+            $filename,
             [
                 new SquareResolution(),
                 new LandscapeResolution(),
@@ -138,7 +138,7 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result files.
      * If empty, then will be stored near to original file
@@ -146,13 +146,13 @@ class InstagramImageResize
      * @return array paths to post images, 1080x1080 px
      * @throws Exception
      */
-    public function getGallerySquare(string $path, string $destination = ''): array
+    public function getGallerySquare(string $filename, string $destination = ''): array
     {
-        return $this->getSliced($path, [new SquareResolution()], $destination);
+        return $this->getSliced($filename, [new SquareResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result files.
      * If empty, then will be stored near to original file
@@ -160,13 +160,13 @@ class InstagramImageResize
      * @return array paths to post images, 1080x565 px
      * @throws Exception
      */
-    public function getGalleryLandscape(string $path, string $destination = ''): array
+    public function getGalleryLandscape(string $filename, string $destination = ''): array
     {
-        return $this->getSliced($path, [new LandscapeResolution()], $destination);
+        return $this->getSliced($filename, [new LandscapeResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result files.
      * If empty, then will be stored near to original file
@@ -174,13 +174,13 @@ class InstagramImageResize
      * @return array paths to post images, 1080x1350 px
      * @throws Exception
      */
-    public function getGalleryPortrait(string $path, string $destination = ''): array
+    public function getGalleryPortrait(string $filename, string $destination = ''): array
     {
-        return $this->getSliced($path, [new PortraitResolution()], $destination);
+        return $this->getSliced($filename, [new PortraitResolution()], $destination);
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result files.
      * If empty, then will be stored near to original file
@@ -188,10 +188,10 @@ class InstagramImageResize
      * @return array paths to post images, detected optimal resolution (square/landscape/portrait)
      * @throws Exception
      */
-    public function getGalleryOptimal(string $path, string $destination = ''): array
+    public function getGalleryOptimal(string $filename, string $destination = ''): array
     {
         return $this->getSliced(
-            $path,
+            $filename,
             [
                 new SquareResolution(),
                 new LandscapeResolution(),
@@ -202,7 +202,7 @@ class InstagramImageResize
     }
 
     /**
-     * @param string $path of file wile you wish to resize
+     * @param string $filename of file wile you wish to resize
      * @param string $destination <p>
      * destination of result files.
      * If empty, then will be stored near to original file
@@ -213,10 +213,10 @@ class InstagramImageResize
      * </p>
      * @throws Exception
      */
-    public function getOptimalPost(string $path, string $destination = ''): array
+    public function getOptimalPost(string $filename, string $destination = ''): array
     {
         $resize = $this->resizeFactory->getGeneralOptimal(
-            $path,
+            $filename,
             [
                 new SquareResolution(),
                 new LandscapeResolution(),
@@ -224,32 +224,32 @@ class InstagramImageResize
             ]
         );
 
-        return $resize->resize($destination ?: $path);
+        return $resize->resize($destination ?: $filename);
     }
 
     /**
-     * @param string $path
+     * @param string $filename
      * @param ImageResolutionInterface[] $imageResolutions
      * @param string $destination
      * @return string
      * @throws Exception
      */
-    private function getSingle(string $path, array $imageResolutions, string $destination): string
+    private function getSingle(string $filename, array $imageResolutions, string $destination): string
     {
-        $resize = $this->resizeFactory->getSingle($path, $imageResolutions);
-        return $resize->resize($destination ?: $path)[0];
+        $resize = $this->resizeFactory->getSingle($filename, $imageResolutions);
+        return $resize->resize($destination ?: $filename)[0];
     }
 
     /**
-     * @param string $path
+     * @param string $filename
      * @param ImageResolutionInterface[] $imageResolutions
      * @param string $destination
      * @return array
      * @throws Exception
      */
-    private function getSliced(string $path, array $imageResolutions, string $destination): array
+    private function getSliced(string $filename, array $imageResolutions, string $destination): array
     {
-        $resize = $this->resizeFactory->getSliced($path, $imageResolutions);
-        return $resize->resize($destination ?: $path);
+        $resize = $this->resizeFactory->getSliced($filename, $imageResolutions);
+        return $resize->resize($destination ?: $filename);
     }
 }
