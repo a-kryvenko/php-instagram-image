@@ -23,7 +23,7 @@ class SlicedImageResizeTest extends TestCase
         $height = 20;
 
         $imageResource = imagecreate($width, $height);
-        imagejpeg($imageResource, $sourcePath, 100);
+        imagewebp($imageResource, $sourcePath, 100);
 
         $resolution = new SquareResolution();
         $image = new Image($sourcePath);
