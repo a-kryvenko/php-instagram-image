@@ -22,8 +22,8 @@ class SlicedImageResizeTest extends TestCase
         $width = 40;
         $height = 20;
 
-        $imageResource = imagecreate($width, $height);
-        imagewebp($imageResource, $sourcePath, 100);
+        $imageResource = imagecreatetruecolor($width, $height);
+        \imagewebp($imageResource, $sourcePath, 100);
 
         $resolution = new SquareResolution();
         $image = new Image($sourcePath);
