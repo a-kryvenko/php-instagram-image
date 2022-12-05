@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Antey\InstagramImage\Resize\SolidImageResize
- * @uses \Antey\InstagramImage\Resize\AbstractResize
+ * @covers \Antey\InstagramImage\Resize\AbstractResize
  * @uses \Antey\InstagramImage\Image\Image
  * @uses \Antey\InstagramImage\Resize\SolidImageResize
  * @uses \Antey\InstagramImage\Resolution\SquareResolution
