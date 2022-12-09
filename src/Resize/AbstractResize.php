@@ -12,6 +12,8 @@ abstract class AbstractResize
     protected Image $image;
     protected ImageResolutionInterface $imageResolution;
 
+    protected string $convertedFilePath = '';
+
     public function __construct(
         Image $image,
         ImageResolutionInterface $imageResolution
@@ -63,11 +65,13 @@ abstract class AbstractResize
             return;
         }
 
-        $newName = str_replace('.'.$extension, '.jpeg', $name);
+        $newName = str_replace('.'.$extension, '.converted.jpeg', $name);
         $path = str_replace('/' . $name, '/' . $newName, $this->image->getPath());
 
         $imageResize = new ImageResize($this->image->getPath());
         $imageResize->save($path, IMAGETYPE_JPEG);
+
+        $this->convertedFilePath = $path;
 
         $this->image = new Image($path);
     }
